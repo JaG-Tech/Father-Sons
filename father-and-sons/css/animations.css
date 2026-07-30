@@ -330,4 +330,73 @@ transform:translateY(0);
 }
 
 }
+/* ==========================================
+   TRUST ANIMATIONS
+========================================== */
+
+
+.stat-card,
+.review-card{
+
+animation:fadeUp .8s ease both;
+
+}
+
+
+
+.stat-card:nth-child(1),
+.review-card:nth-child(1){
+
+animation-delay:.1s;
+
+}
+
+
+
+.stat-card:nth-child(2),
+.review-card:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+
+
+.stat-card:nth-child(3),
+.review-card:nth-child(3){
+
+animation-delay:.3s;
+
+}
+
+
+
+.stat-card:nth-child(4){
+
+animation-delay:.4s;
+
+}
+
+
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
 
