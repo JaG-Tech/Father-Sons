@@ -1556,4 +1556,215 @@ max-height:200px;
 transform:rotate(45deg);
 
 }
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+
+.contact{
+
+padding:120px 0;
+
+background:
+
+linear-gradient(
+135deg,
+#1d1d1d,
+#111
+);
+
+text-align:center;
+
+}
+
+
+
+.contact-content{
+
+max-width:750px;
+
+margin:auto;
+
+}
+
+
+
+.contact h2{
+
+font-size:clamp(2.5rem,5vw,4rem);
+
+margin-bottom:20px;
+
+}
+
+
+
+.contact p{
+
+color:var(--gray);
+
+font-size:1.1rem;
+
+}
+
+
+
+.contact-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+
+
+/* ==========================================
+   SERVICE AREA
+========================================== */
+
+
+.service-area{
+
+padding:90px 0;
+
+background:#151515;
+
+}
+
+
+
+.cities{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+
+
+.cities span{
+
+padding:12px 22px;
+
+border:1px solid rgba(255,255,255,.15);
+
+color:var(--gray);
+
+background:#202020;
+
+}
+
+
+
+
+
+/* ==========================================
+   FLOATING CALL BUTTON
+========================================== */
+
+
+.floating-call{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+background:var(--lime);
+
+color:#111;
+
+padding:16px 25px;
+
+border-radius:50px;
+
+font-family:"Oswald",sans-serif;
+
+text-transform:uppercase;
+
+font-weight:bold;
+
+z-index:1500;
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.4);
+
+transition:.3s;
+
+}
+
+
+
+.floating-call:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+
+.footer{
+
+padding:50px 0;
+
+background:#090909;
+
+text-align:center;
+
+color:var(--gray);
+
+}
+
+
+
+.footer-logo{
+
+font-family:"Oswald",sans-serif;
+
+font-size:1.8rem;
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+
+
+.footer-logo span{
+
+color:var(--lime);
+
+}
+
+
+
+.copyright{
+
+margin-top:20px;
+
+font-size:.85rem;
+
+}
 
