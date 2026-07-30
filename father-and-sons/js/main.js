@@ -194,5 +194,80 @@ value + "%";
 
 
 }
+/* ==========================================
+   GALLERY LIGHTBOX
+========================================== */
+
+
+const galleryImages =
+document.querySelectorAll(".gallery-item img");
+
+
+const lightbox =
+document.querySelector(".lightbox");
+
+
+const lightboxImage =
+document.querySelector(".lightbox img");
+
+
+const closeLightbox =
+document.querySelector(".close-lightbox");
+
+
+
+galleryImages.forEach(image=>{
+
+
+image.addEventListener("click",()=>{
+
+
+lightboxImage.src =
+image.src;
+
+
+lightbox.classList.add("active");
+
+
+});
+
+
+});
+
+
+
+if(closeLightbox){
+
+
+closeLightbox.addEventListener("click",()=>{
+
+
+lightbox.classList.remove("active");
+
+
+});
+
+
+}
+
+
+
+if(lightbox){
+
+
+lightbox.addEventListener("click",(e)=>{
+
+
+if(e.target === lightbox){
+
+lightbox.classList.remove("active");
+
+}
+
+
+});
+
+
+}
 
 
