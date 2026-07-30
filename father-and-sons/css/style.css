@@ -1377,4 +1377,183 @@ text-transform:uppercase;
 
 }
 
+/* ==========================================
+   PROCESS SECTION
+========================================== */
+
+
+.process{
+
+padding:120px 0;
+
+background:#151515;
+
+}
+
+
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.process-card{
+
+background:#202020;
+
+padding:40px 30px;
+
+border-top:3px solid var(--lime);
+
+}
+
+
+
+.process-number{
+
+font-family:"Oswald",sans-serif;
+
+font-size:3rem;
+
+color:var(--lime);
+
+margin-bottom:20px;
+
+}
+
+
+
+.process-card h3{
+
+font-size:1.5rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.process-card p{
+
+color:var(--gray);
+
+}
+
+
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+
+.faq{
+
+padding:120px 0;
+
+background:#111;
+
+}
+
+
+
+.faq-container{
+
+max-width:850px;
+
+}
+
+
+
+.faq-item{
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+
+
+.faq-question{
+
+width:100%;
+
+background:none;
+
+border:0;
+
+color:white;
+
+padding:25px 0;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-family:"Oswald",sans-serif;
+
+font-size:1.3rem;
+
+text-transform:uppercase;
+
+cursor:pointer;
+
+}
+
+
+
+.faq-question span{
+
+color:var(--lime);
+
+font-size:2rem;
+
+}
+
+
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.4s ease;
+
+}
+
+
+
+.faq-answer p{
+
+color:var(--gray);
+
+padding-bottom:25px;
+
+}
+
+
+
+.faq-item.active .faq-answer{
+
+max-height:200px;
+
+}
+
+
+
+.faq-item.active .faq-question span{
+
+transform:rotate(45deg);
+
+}
 
