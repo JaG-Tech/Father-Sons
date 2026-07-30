@@ -147,4 +147,52 @@ document.querySelectorAll(".animate")
 observer.observe(element);
 
 });
+/* ==========================================
+   BEFORE AFTER SLIDER
+========================================== */
+
+
+const slider =
+document.querySelector(".slider-control");
+
+
+const afterImage =
+document.querySelector(".after-container");
+
+
+const sliderLine =
+document.querySelector(".slider-line");
+
+
+const sliderButton =
+document.querySelector(".slider-button");
+
+
+
+if(slider){
+
+
+slider.addEventListener("input",()=>{
+
+
+let value = slider.value;
+
+
+afterImage.style.width =
+value + "%";
+
+
+sliderLine.style.left =
+value + "%";
+
+
+sliderButton.style.left =
+value + "%";
+
+
+});
+
+
+}
+
 
