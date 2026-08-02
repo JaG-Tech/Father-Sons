@@ -210,8 +210,9 @@ margin:6px;
 
 .hero{
 
-height:100vh;
-min-height:700px;
+min-height:100vh;
+
+padding:160px 0 80px;
 
 position:relative;
 
