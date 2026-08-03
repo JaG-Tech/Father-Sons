@@ -138,15 +138,39 @@ img{max-width:100%;display:block;}
     margin-top: 28px;
   }
 
- .badge {
+.badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 10px 18px;
+  font-size: .85rem;
+  color: var(--gray);
+  animation: badgeRise .8s ease forwards;
+  cursor: default;
+  user-select: none;
+  caret-color: transparent;
+  position: relative;
+}
+
+.badge span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--lime);
+  margin-right: 0;
+  pointer-events: none;
 }
 
 .badge * {
   cursor: default;
   caret-color: transparent;
+}
+
+.badge::before,
+.badge::after {
+  content: none !important;
+}
 }
 
   .hero-buttons {
