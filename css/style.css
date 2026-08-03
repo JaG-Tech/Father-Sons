@@ -141,6 +141,7 @@ img{max-width:100%;display:block;}
   .badge,
 .badge * {
   cursor: default !important;
+  caret-color: transparent !important;
   animation: none !important;
 }
 
