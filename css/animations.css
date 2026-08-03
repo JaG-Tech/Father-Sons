@@ -50,17 +50,14 @@
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
 
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{
-    animation:none!important;
-    transition:none!important;
-  }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;}
 }
 
-@media (max-width: 768px){
-  .service-card{
-    opacity:1 !important;
-    transform:none !important;
-    animation:none !important;
+@media (max-width: 768px) {
+  .service-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
