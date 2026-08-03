@@ -245,3 +245,19 @@ img{max-width:100%;display:block;}
 .scroll-indicator * {
   display: none !important;
 }
+.hero,
+.hero * {
+  outline: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.hero,
+.hero-overlay,
+.hero-content,
+.hero-copy,
+.trust-badges,
+.badge,
+.scroll-indicator {
+  all: unset !important;
+}
