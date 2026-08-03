@@ -235,3 +235,13 @@ img{max-width:100%;display:block;}
   cursor: default !important;
   caret-color: transparent !important;
 }
+.hero *::before,
+.hero *::after {
+  content: none !important;
+  display: none !important;
+}
+
+.scroll-indicator,
+.scroll-indicator * {
+  display: none !important;
+}
