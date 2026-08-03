@@ -843,64 +843,15 @@ img{
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .nav-button {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .trust-badges {
-    margin-top: 35px;
-  }
-
-  .nav-links.active {
-    display: flex;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background: #111;
-    flex-direction: column;
-    padding: 30px;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-
   .services-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
   .service-card {
-    opacity: 1;
-    transform: none;
-    animation: none;
-    padding: 28px 22px;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    display: block;
   }
 }
