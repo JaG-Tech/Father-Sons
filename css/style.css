@@ -138,11 +138,11 @@ img{max-width:100%;display:block;}
     margin-top: 28px;
   }
 
-  .badge {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
+  .badge,
+.badge * {
+  cursor: default !important;
+  animation: none !important;
+}
 
   .hero-buttons {
     flex-direction: column;
