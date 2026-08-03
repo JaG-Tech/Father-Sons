@@ -888,3 +888,11 @@ img{
   background:rgba(17,17,17,.96);
   box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
+.services-grid{
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.service-card{
+  padding: 28px 22px;
+}
