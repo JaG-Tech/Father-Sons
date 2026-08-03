@@ -199,3 +199,18 @@ img{max-width:100%;display:block;}
   content: none !important;
   display: none !important;
 }
+.badge, .badge * {
+  cursor: default !important;
+  caret-color: transparent !important;
+  user-select: none !important;
+  position: static !important;
+}
+
+.badge::before, .badge::after, .badge *::before, .badge *::after {
+  content: none !important;
+  display: none !important;
+}
+
+.trust-badges, .trust-badges * {
+  position: static !important;
+}
