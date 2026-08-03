@@ -1,314 +1,91 @@
-/* ==========================================
-   FATHER & SONS
-   Main JavaScript
-========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const faqItems = document.querySelectorAll('.faq-item');
+  const slider = document.querySelector('.slider-control');
+  const afterContainer = document.querySelector('.after-container');
+  const sliderLine = document.querySelector('.slider-line');
+  const sliderButton = document.querySelector('.slider-button');
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+  const closeLightbox = document.querySelector('.close-lightbox');
+  const galleryItems = document.querySelectorAll('.gallery-item img');
 
+  const syncSlider = (value) => {
+    if (!afterContainer || !sliderLine || !sliderButton) return;
+    afterContainer.style.width = `${value}%`;
+    sliderLine.style.left = `${value}%`;
+    sliderButton.style.left = `${value}%`;
+  };
 
-/* ---------- MOBILE MENU ---------- */
+  if (slider && afterContainer) {
+    syncSlider(slider.value);
+    slider.addEventListener('input', (e) => syncSlider(e.target.value));
+  }
 
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+      const expanded = menuToggle.classList.contains('open');
+      menuToggle.setAttribute('aria-expanded', String(expanded));
+    });
 
-const menuButton = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-question');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const b = i.querySelector('.faq-question');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!isActive) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 
-if(menuButton){
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 
-menuButton.addEventListener("click",()=>{
+  if (lightbox && lightboxImg && closeLightbox) {
+    galleryItems.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Expanded repair photo';
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
 
-navLinks.classList.toggle("active");
+    const close = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    };
 
-menuButton.classList.toggle("open");
-
+    closeLightbox.addEventListener('click', close);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) close();
+    });
+  }
 });
-
-}
-
-
-
-
-/* ---------- CLOSE MENU AFTER CLICK ---------- */
-
-
-document.querySelectorAll(".nav-links a")
-.forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-navLinks.classList.remove("active");
-
-menuButton.classList.remove("open");
-
-});
-
-});
-
-
-
-
-
-/* ---------- HEADER EFFECT ---------- */
-
-
-const header = document.querySelector(".header");
-
-
-window.addEventListener("scroll",()=>{
-
-
-if(window.scrollY > 50){
-
-header.classList.add("scrolled");
-
-}
-
-else{
-
-header.classList.remove("scrolled");
-
-}
-
-
-});
-
-
-
-
-
-/* ---------- SMOOTH SCROLL ---------- */
-
-
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor=>{
-
-
-anchor.addEventListener("click",function(e){
-
-
-const target =
-document.querySelector(this.getAttribute("href"));
-
-
-if(target){
-
-e.preventDefault();
-
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-}
-
-
-});
-
-
-});
-
-
-
-
-
-/* ---------- FUTURE ANIMATION OBSERVER ---------- */
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("visible");
-
-}
-
-
-});
-
-
-},
-{
-
-threshold:.15
-
-});
-
-
-
-document.querySelectorAll(".animate")
-.forEach(element=>{
-
-observer.observe(element);
-
-});
-/* ==========================================
-   BEFORE AFTER SLIDER
-========================================== */
-
-
-const slider =
-document.querySelector(".slider-control");
-
-
-const afterImage =
-document.querySelector(".after-container");
-
-
-const sliderLine =
-document.querySelector(".slider-line");
-
-
-const sliderButton =
-document.querySelector(".slider-button");
-
-
-
-if(slider){
-
-
-slider.addEventListener("input",()=>{
-
-
-let value = slider.value;
-
-
-afterImage.style.width =
-value + "%";
-
-
-sliderLine.style.left =
-value + "%";
-
-
-sliderButton.style.left =
-value + "%";
-
-
-});
-
-
-}
-/* ==========================================
-   GALLERY LIGHTBOX
-========================================== */
-
-
-const galleryImages =
-document.querySelectorAll(".gallery-item img");
-
-
-const lightbox =
-document.querySelector(".lightbox");
-
-
-const lightboxImage =
-document.querySelector(".lightbox img");
-
-
-const closeLightbox =
-document.querySelector(".close-lightbox");
-
-
-
-galleryImages.forEach(image=>{
-
-
-image.addEventListener("click",()=>{
-
-
-lightboxImage.src =
-image.src;
-
-
-lightbox.classList.add("active");
-
-
-});
-
-
-});
-
-
-
-if(closeLightbox){
-
-
-closeLightbox.addEventListener("click",()=>{
-
-
-lightbox.classList.remove("active");
-
-
-});
-
-
-}
-
-
-
-if(lightbox){
-
-
-lightbox.addEventListener("click",(e)=>{
-
-
-if(e.target === lightbox){
-
-lightbox.classList.remove("active");
-
-}
-
-
-});
-
-
-}
-
-/* ==========================================
-   FAQ ACCORDION
-========================================== */
-
-
-const faqItems =
-document.querySelectorAll(".faq-item");
-
-
-faqItems.forEach(item=>{
-
-
-const button =
-item.querySelector(".faq-question");
-
-
-
-button.addEventListener("click",()=>{
-
-
-item.classList.toggle("active");
-
-
-
-faqItems.forEach(other=>{
-
-
-if(other !== item){
-
-other.classList.remove("active");
-
-}
-
-
-});
-
-
-});
-
-
-});
-
