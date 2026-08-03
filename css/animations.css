@@ -114,8 +114,6 @@ left:100%;
 
 animation:badgeRise .8s ease forwards;
 
-opacity:0;
-
 }
 
 
@@ -282,10 +280,6 @@ transition:none!important;
 
 
 .service-card{
-
-opacity:0;
-
-transform:translateY(40px);
 
 animation:serviceReveal .8s ease forwards;
 
