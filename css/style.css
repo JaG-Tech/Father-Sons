@@ -139,11 +139,9 @@ img{max-width:100%;display:block;}
   }
 
  .badge {
-  animation: badgeRise .8s ease forwards;
-  cursor: default;
-  caret-color: transparent;
-  user-select: none;
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .badge * {
