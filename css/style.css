@@ -138,11 +138,17 @@ img{max-width:100%;display:block;}
     margin-top: 28px;
   }
 
- .badge,
+ .badge {
+  animation: badgeRise .8s ease forwards;
+  cursor: default;
+  caret-color: transparent;
+  user-select: none;
+  position: relative;
+}
+
 .badge * {
-  cursor: default !important;
-  caret-color: transparent !important;
-  user-select: none !important;
+  cursor: default;
+  caret-color: transparent;
 }
 
   .hero-buttons {
