@@ -116,15 +116,10 @@ img{
   transition:.3s;
 }
 
-.hero{
-  min-height:100vh;
-  padding:70px 0 80px;
-  position:relative;
-  display:flex;
-  align-items:center;
+.hero {
   background:
     linear-gradient(90deg, rgba(17,17,17,.95), rgba(17,17,17,.75)),
-    url("images/hero.jpg") center/cover no-repeat;
+    url("./images/hero.jpg") center/cover no-repeat;
 }
 
 .hero-overlay{
