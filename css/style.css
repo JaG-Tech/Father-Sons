@@ -184,3 +184,18 @@ img{max-width:100%;display:block;}
   }
 }
 .header.scrolled{background:rgba(17,17,17,.96);box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.badge,
+.badge * {
+  cursor: default !important;
+  caret-color: transparent !important;
+  user-select: none !important;
+  position: static !important;
+}
+
+.badge::before,
+.badge::after,
+.badge *::before,
+.badge *::after {
+  content: none !important;
+  display: none !important;
+}
